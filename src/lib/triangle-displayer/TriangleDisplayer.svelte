@@ -9,8 +9,22 @@
 	}> = $props();
 </script>
 
-<div>
-	{#each triangle as row, rowIndex (rowIndex)}
-		<TriangleRowDisplayer {row} />
-	{/each}
+<div class="triangle-displayer">
+	<div class="triangle-displayer__content">
+		{#each triangle as row, rowIndex (rowIndex)}
+			<TriangleRowDisplayer {row} />
+		{/each}
+	</div>
 </div>
+
+<style lang="scss">
+	.triangle-displayer {
+		display: grid;
+	}
+
+	.triangle-displayer__content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+</style>
