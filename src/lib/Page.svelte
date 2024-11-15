@@ -1,20 +1,29 @@
 <script lang="ts">
-	import {computeExpandedPascalTriangle} from "./pascal-algorithm/computeExpandedPascalTriangle.ts";
+	import AlgorithmMenu from "./algorithm-menu/AlgorithmMenu.svelte";
+	import type {TriangleAlgorithm} from "./triangle-algorithms/TriangleAlgorithm.ts";
+	import type {TriangleAlgorithms} from "./triangle-algorithms/TriangleAlgorithms.ts";
 	import TriangleDisplayer from "./triangle-displayer/TriangleDisplayer.svelte";
-	import type {Triangle} from "./triangle/Triangle.ts";
-	let pascalTriangle = $state.raw<Triangle>([[1]]);
 
-	$effect(function handleMount(): () => void {
-		const intervalId = setInterval(function animate(): void {
-			pascalTriangle = computeExpandedPascalTriangle(pascalTriangle);
-		}, 1000);
+	const {
+		selectedAlgorithm,
+		supportedAlgorithms,
+		selectedAlgorithmSearchParameterName,
+	}: Readonly<{
+		selectedAlgorithm: null | TriangleAlgorithm;
+		supportedAlgorithms: TriangleAlgorithms;
+		selectedAlgorithmSearchParameterName: string;
+	}> = $props();
 
-		return function handleUnmount(): void {
-			clearInterval(intervalId);
-		};
-	});
+	const selectedAlgorithmId = $derived(selectedAlgorithm === null ? null : selectedAlgorithm.id);
 </script>
 
 <main>
-	<TriangleDisplayer triangle={pascalTriangle} />
+	<AlgorithmMenu
+		{selectedAlgorithmId}
+		{supportedAlgorithms}
+		{selectedAlgorithmSearchParameterName}
+	/>
+	{#if selectedAlgorithm !== null}
+		<TriangleDisplayer computeNextTriangleRow={selectedAlgorithm.computeNextTriangleRow} />
+	{/if}
 </main>

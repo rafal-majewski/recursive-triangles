@@ -1,12 +1,27 @@
 <script lang="ts">
+	import {computeExpandedTriangle} from "../triangle-algorithms/computeExpandedTriangle.ts";
+	import {initialTriangle} from "../triangle/initialTriangle.ts";
+	import type {ComputeNextTriangleRow} from "../triangle-algorithms/ComputeNextTriangleRow.ts";
 	import type {Triangle} from "../triangle/Triangle.ts";
 	import TriangleRowDisplayer from "./row/TriangleRowDisplayer.svelte";
 
 	const {
-		triangle,
+		computeNextTriangleRow,
 	}: Readonly<{
-		triangle: Triangle;
+		computeNextTriangleRow: ComputeNextTriangleRow;
 	}> = $props();
+
+	let triangle: Triangle = $state.raw(initialTriangle);
+
+	$effect(function handleComputeNextTriangleRowChange(): void | (() => void) {
+		const intervalId = setInterval(function animate(): void {
+			triangle = computeExpandedTriangle(triangle, computeNextTriangleRow);
+		}, 1000);
+
+		return function handleUnmount(): void {
+			clearInterval(intervalId);
+		};
+	});
 </script>
 
 <div class="triangle-displayer">
