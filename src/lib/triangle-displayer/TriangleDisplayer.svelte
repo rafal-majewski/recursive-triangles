@@ -27,3 +27,15 @@
 		{/each}
 	</div>
 </div>
+
+<style lang="scss">
+	.triangle-displayer {
+		display: grid;
+	}
+
+	.triangle-displayer__content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+</style>
