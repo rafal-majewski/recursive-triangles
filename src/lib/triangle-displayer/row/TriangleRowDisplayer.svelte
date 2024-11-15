@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type {TriangleRow} from "../../triangle/row/TriangleRow.ts";
+	import TriangleRowCellDisplayer from "./cell/TriangleRowCellDisplayer.svelte";
 
 	const {
 		row,
@@ -8,8 +9,14 @@
 	}> = $props();
 </script>
 
-<div>
+<div class="row">
 	{#each row as cell, cellIndex (cellIndex)}
-		{cell}
+		<TriangleRowCellDisplayer {cell} />
 	{/each}
 </div>
+
+<style lang="scss">
+	.row {
+		display: flex;
+	}
+</style>
