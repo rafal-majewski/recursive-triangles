@@ -14,10 +14,12 @@
 </script>
 
 <form>
-	<QueryFormAlgorithmSelect
-		{currentAlgorithmId}
-		{supportedAlgorithms}
-		parameterName={algorithmIdUrlSearchParameterName}
-	/>
+	<div>
+		<QueryFormAlgorithmSelect
+			{currentAlgorithmId}
+			{supportedAlgorithms}
+			parameterName={algorithmIdUrlSearchParameterName}
+		/>
+	</div>
 	<button type="submit">Apply</button>
 </form>
