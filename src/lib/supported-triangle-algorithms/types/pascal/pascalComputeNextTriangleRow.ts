@@ -1,5 +1,5 @@
-import type {Triangle} from "../triangle/Triangle.ts";
-import type {TriangleRow} from "../triangle/row/TriangleRow.ts";
+import type {Triangle} from "../../../triangle/Triangle.ts";
+import type {TriangleRow} from "../../../triangle/row/TriangleRow.ts";
 
 export function pascalComputeNextTriangleRow(triangle: Triangle): TriangleRow {
 	const newRow: bigint[] = [];

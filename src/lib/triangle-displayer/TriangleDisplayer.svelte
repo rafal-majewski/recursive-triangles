@@ -1,9 +1,23 @@
 <script lang="ts">
-	import {pascalComputeNextTriangleRow} from "../pascal-triangle-algorithm/pascalComputeNextTriangleRow.ts";
+	import type {ComputeNextTriangleRow} from "../triangle-algorithms/ComputeNextTriangleRow.ts";
 	import TriangleRowDisplayer from "./row/TriangleRowDisplayer.svelte";
 	import type {TriangleAnimator} from "./triangle-animator/TriangleAnimator.ts";
-	import {createTriangleAnimator} from "./triangle-animator/createTriangleAnimator.svelte.ts";
-	const triangleAnimator: TriangleAnimator = createTriangleAnimator(pascalComputeNextTriangleRow);
+
+	const {
+		computeNextTriangleRow,
+	}: Readonly<{
+		computeNextTriangleRow: ComputeNextTriangleRow;
+	}> = $props();
+
+	const triangleAnimator: TriangleAnimator = createTriangleAnimator(computeNextTriangleRow);
+	let previousComputeNextTriangleRow = computeNextTriangleRow;
+
+	$effect((): void => {
+		if (previousComputeNextTriangleRow !== computeNextTriangleRow) {
+			triangleAnimator.changeComputeNextTriangleRow(computeNextTriangleRow);
+			previousComputeNextTriangleRow = computeNextTriangleRow;
+		}
+	});
 </script>
 
 <div class="triangle-displayer">
