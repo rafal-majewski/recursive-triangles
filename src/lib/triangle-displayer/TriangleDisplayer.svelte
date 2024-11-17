@@ -2,10 +2,13 @@
 	import type {ComputeNextTriangleRow} from "../triangle-algorithms/ComputeNextTriangleRow.ts";
 	import TriangleRowDisplayer from "./row/TriangleRowDisplayer.svelte";
 	import type {TriangleAnimator} from "./triangle-animator/TriangleAnimator.ts";
+	import {createTriangleAnimator} from "./triangle-animator/createTriangleAnimator.svelte.ts";
 
 	const {
+		colorCount,
 		computeNextTriangleRow,
 	}: Readonly<{
+		colorCount: number;
 		computeNextTriangleRow: ComputeNextTriangleRow;
 	}> = $props();
 
@@ -23,7 +26,7 @@
 <div class="triangle-displayer">
 	<div class="triangle-displayer__content">
 		{#each triangleAnimator.triangle as row, rowIndex (rowIndex)}
-			<TriangleRowDisplayer {row} />
+			<TriangleRowDisplayer {row} {colorCount} />
 		{/each}
 	</div>
 </div>

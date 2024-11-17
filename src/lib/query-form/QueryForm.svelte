@@ -1,14 +1,18 @@
 <script lang="ts">
+	import type {Query} from "../query/Query.ts";
 	import type {TriangleAlgorithms} from "../triangle-algorithms/TriangleAlgorithms.ts";
 	import QueryFormAlgorithmSelect from "./inputs/QueryFormAlgorithmSelect.svelte";
+	import QueryFormColorCountInput from "./inputs/QueryFormColorCountInput.svelte";
 
 	const {
 		algorithmIdUrlSearchParameterName,
-		currentAlgorithmId,
+		colorCountUrlSearchParameterName,
+		currentQuery,
 		supportedAlgorithms,
 	}: Readonly<{
 		algorithmIdUrlSearchParameterName: string;
-		currentAlgorithmId: null | string;
+		colorCountUrlSearchParameterName: string;
+		currentQuery: Query;
 		supportedAlgorithms: TriangleAlgorithms;
 	}> = $props();
 </script>
@@ -16,9 +20,13 @@
 <form>
 	<div>
 		<QueryFormAlgorithmSelect
-			{currentAlgorithmId}
+			currentAlgorithmId={currentQuery.algorithm?.id ?? null}
 			{supportedAlgorithms}
 			parameterName={algorithmIdUrlSearchParameterName}
+		/>
+		<QueryFormColorCountInput
+			currentColorCount={currentQuery.colorCount}
+			parameterName={colorCountUrlSearchParameterName}
 		/>
 	</div>
 	<button type="submit">Apply</button>
