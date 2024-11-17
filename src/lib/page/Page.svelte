@@ -12,7 +12,7 @@
 	}: Readonly<{
 		algorithmIdUrlSearchParameterName: string;
 		colorCountUrlSearchParameterName: string;
-		query: Query;
+		query: Query | null;
 		supportedAlgorithms: TriangleAlgorithms;
 	}> = $props();
 </script>
@@ -24,7 +24,7 @@
 		{colorCountUrlSearchParameterName}
 		{algorithmIdUrlSearchParameterName}
 	/>
-	{#if query.algorithm !== null && query.colorCount !== null}
+	{#if query !== null && query.algorithm !== null && query.colorCount !== null}
 		<TriangleDisplayer
 			computeNextTriangleRow={query.algorithm.computeNextTriangleRow}
 			colorCount={query.colorCount}

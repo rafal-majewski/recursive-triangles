@@ -6,7 +6,7 @@ export function getTriangleAlgorithmFromUrlSearchParams(
 	params: URLSearchParams,
 	triangleAlgorithms: TriangleAlgorithms,
 	algorithmIdParameterName: string,
-): TriangleAlgorithm | null {
+): null | TriangleAlgorithm {
 	const algorithmId = getStringFromUrlSearchParams(params, algorithmIdParameterName);
 
 	if (algorithmId === null) {

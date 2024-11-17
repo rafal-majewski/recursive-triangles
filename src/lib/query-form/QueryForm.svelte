@@ -12,7 +12,7 @@
 	}: Readonly<{
 		algorithmIdUrlSearchParameterName: string;
 		colorCountUrlSearchParameterName: string;
-		currentQuery: Query;
+		currentQuery: null | Query;
 		supportedAlgorithms: TriangleAlgorithms;
 	}> = $props();
 </script>
@@ -20,12 +20,12 @@
 <form>
 	<div>
 		<QueryFormAlgorithmSelect
-			currentAlgorithmId={currentQuery.algorithm?.id ?? null}
+			currentAlgorithmId={currentQuery?.algorithm?.id ?? null}
 			{supportedAlgorithms}
 			parameterName={algorithmIdUrlSearchParameterName}
 		/>
 		<QueryFormColorCountInput
-			currentColorCount={currentQuery.colorCount}
+			currentColorCount={currentQuery?.colorCount ?? null}
 			parameterName={colorCountUrlSearchParameterName}
 		/>
 	</div>
