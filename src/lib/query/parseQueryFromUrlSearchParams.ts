@@ -10,7 +10,7 @@ export function parseQueryFromUrlSearchParams(
 	colorCountParameterName: string,
 	supportedAlgorithms: TriangleAlgorithms,
 ): Query {
-	const algorithm: TriangleAlgorithm | null = getTriangleAlgorithmFromUrlSearchParams(
+	const algorithm: null | TriangleAlgorithm = getTriangleAlgorithmFromUrlSearchParams(
 		params,
 		supportedAlgorithms,
 		algorithmParameterName,
