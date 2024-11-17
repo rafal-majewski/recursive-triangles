@@ -543,7 +543,7 @@ const options = {
   root,
   service_worker: false,
   templates: {
-    app: ({ head, body, assets: assets2, nonce, env }) => '<!doctype html>\n<html lang="en">\n	<head>\n		<meta charset="UTF-8" />\n		<meta name="viewport" content="width=device-width, initial-scale=1" />\n		<title>Recursive triangles</title>\n		<link rel="icon" href="data:" />\n		<style>\n			*,\n			*::before,\n			*::after {\n				box-sizing: border-box;\n			}\n\n			body {\n				margin: 0;\n			}\n\n			html {\n				display: flex;\n				flex-direction: column;\n				min-height: 100%;\n			}\n\n			body {\n				flex: 1;\n				display: flex;\n				flex-direction: column;\n			}\n			\n			.sveltekit-body {\n				flex: 1;\n			}\n		</style>\n		' + head + '\n	</head>\n	<body>\n		<div class="sveltekit-body">' + body + "</div>\n	</body>\n</html>\n",
+    app: ({ head, body, assets: assets2, nonce, env }) => '<!doctype html>\n<html lang="en">\n	<head>\n		<meta charset="UTF-8" />\n		<meta name="viewport" content="width=device-width, initial-scale=1" />\n		<title>Recursive triangles</title>\n		<link rel="icon" href="data:" />\n		<style>\n			*,\n			*::before,\n			*::after {\n				box-sizing: border-box;\n			}\n\n			body {\n				margin: 0;\n			}\n\n			html {\n				display: flex;\n				flex-direction: column;\n				min-height: 100%;\n			}\n\n			body {\n				flex: 1;\n				display: flex;\n				flex-direction: column;\n			}\n\n			.sveltekit-body {\n				flex: 1;\n			}\n		</style>\n		' + head + '\n	</head>\n	<body>\n		<div class="sveltekit-body">' + body + "</div>\n	</body>\n</html>\n",
     error: ({ status, message }) => '<!doctype html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<title>' + message + `</title>
 
 		<style>
@@ -615,7 +615,7 @@ const options = {
 		<div class="error">
 			<span class="status">` + status + '</span>\n			<div class="message">\n				<h1>' + message + "</h1>\n			</div>\n		</div>\n	</body>\n</html>\n"
   },
-  version_hash: "1558zct"
+  version_hash: "fimuyl"
 };
 async function get_hooks() {
   return {};

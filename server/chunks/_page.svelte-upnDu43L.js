@@ -101,10 +101,10 @@ function createTriangleAnimator(initialComputeNextTriangleRow) {
     intervalId = setAnimationInterval();
   }
   return {
+    changeComputeNextTriangleRow,
     get triangle() {
       return triangle;
-    },
-    changeComputeNextTriangleRow
+    }
   };
 }
 function TriangleDisplayer($$payload, $$props) {
@@ -209,9 +209,9 @@ function pascalComputeNextTriangleRow(triangle) {
   return newRow;
 }
 const pascalTriangleAlgorithm = {
+  computeNextTriangleRow: pascalComputeNextTriangleRow,
   id: "pascal",
-  name: "Pascal's",
-  computeNextTriangleRow: pascalComputeNextTriangleRow
+  name: "Pascal's"
 };
 function computeBinomialCoefficient(n, k) {
   if (k === 0n || k === n) {
@@ -239,9 +239,9 @@ function surjectionCountComputeNextTriangleRow(triangle) {
   return newRow;
 }
 const surjectionCountTriangleAlgorithm = {
+  computeNextTriangleRow: surjectionCountComputeNextTriangleRow,
   id: "surjection-count",
-  name: "Surjection count",
-  computeNextTriangleRow: surjectionCountComputeNextTriangleRow
+  name: "Surjection count"
 };
 const supportedTriangleAlgorithms = {
   [pascalTriangleAlgorithm.id]: pascalTriangleAlgorithm,
@@ -264,4 +264,4 @@ function _page($$payload, $$props) {
 }
 
 export { _page as default };
-//# sourceMappingURL=_page.svelte-D8kVEenY.js.map
+//# sourceMappingURL=_page.svelte-upnDu43L.js.map
