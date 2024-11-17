@@ -1,25 +1,33 @@
 <script lang="ts">
-	import QueryForm from "../query-form/QueryForm.svelte";
-	import type {TriangleAlgorithm} from "../triangle-algorithms/TriangleAlgorithm.ts";
+	import QueryForm from "$lib/query-form/QueryForm.svelte";
+	import type {Query} from "../query/Query.ts";
 	import type {TriangleAlgorithms} from "../triangle-algorithms/TriangleAlgorithms.ts";
 	import TriangleDisplayer from "../triangle-displayer/TriangleDisplayer.svelte";
 
 	const {
 		algorithmIdUrlSearchParameterName,
-		currentAlgorithm,
+		colorCountUrlSearchParameterName,
+		query,
 		supportedAlgorithms,
 	}: Readonly<{
 		algorithmIdUrlSearchParameterName: string;
-		currentAlgorithm: TriangleAlgorithm | null;
+		colorCountUrlSearchParameterName: string;
+		query: Query;
 		supportedAlgorithms: TriangleAlgorithms;
 	}> = $props();
-
-	const currentAlgorithmId = $derived(currentAlgorithm === null ? null : currentAlgorithm.id);
 </script>
 
 <main>
-	<QueryForm {currentAlgorithmId} {supportedAlgorithms} {algorithmIdUrlSearchParameterName} />
-	{#if currentAlgorithm !== null}
-		<TriangleDisplayer computeNextTriangleRow={currentAlgorithm.computeNextTriangleRow} />
+	<QueryForm
+		currentQuery={query}
+		{supportedAlgorithms}
+		{colorCountUrlSearchParameterName}
+		{algorithmIdUrlSearchParameterName}
+	/>
+	{#if query.algorithm !== null && query.colorCount !== null}
+		<TriangleDisplayer
+			computeNextTriangleRow={query.algorithm.computeNextTriangleRow}
+			colorCount={query.colorCount}
+		/>
 	{/if}
 </main>

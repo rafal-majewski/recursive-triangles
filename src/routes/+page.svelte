@@ -1,22 +1,26 @@
 <script lang="ts">
 	import {page} from "$app/stores";
 	import Page from "../lib/page/Page.svelte";
+	import type {Query} from "../lib/query/Query.ts";
 	import {getTriangleAlgorithmFromUrlSearchParams} from "../lib/query/getTriangleAlgorithmFromUrlSearchParams.ts";
+	import {parseQueryFromUrlSearchParams} from "../lib/query/parseQueryFromUrlSearchParams.ts";
 	import {supportedTriangleAlgorithms} from "../lib/supported-triangle-algorithms/supportedTriangleAlgorithms.ts";
-	import type {TriangleAlgorithm} from "../lib/triangle-algorithms/TriangleAlgorithm.ts";
 	const algorithmIdUrlSearchParameterName = "algorithm";
+	const colorCountUrlSearchParameterName = "color-count";
 
-	const currentAlgorithm: TriangleAlgorithm | null = $derived(
-		getTriangleAlgorithmFromUrlSearchParams(
+	const query: Query = $derived<Query>(
+		parseQueryFromUrlSearchParams(
 			$page.url.searchParams,
-			supportedTriangleAlgorithms,
 			algorithmIdUrlSearchParameterName,
+			colorCountUrlSearchParameterName,
+			supportedTriangleAlgorithms,
 		),
 	);
 </script>
 
 <Page
-	{currentAlgorithm}
+	{query}
+	{colorCountUrlSearchParameterName}
 	{algorithmIdUrlSearchParameterName}
 	supportedAlgorithms={supportedTriangleAlgorithms}
 />
