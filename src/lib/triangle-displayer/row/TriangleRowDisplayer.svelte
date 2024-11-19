@@ -20,5 +20,9 @@
 <style lang="scss">
 	.row {
 		display: flex;
+
+		&:not(:first-child) {
+			margin-top: calc(-2rem / sqrt(3) / 2);
+		}
 	}
 </style>

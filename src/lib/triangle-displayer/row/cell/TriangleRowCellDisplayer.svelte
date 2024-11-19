@@ -18,8 +18,10 @@
 	.cell {
 		display: grid;
 		place-items: center;
-		width: 2rem;
+		width: calc(2rem * sqrt(3) / 2);
 		height: 2rem;
 		overflow: hidden;
+		clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+		font-size: 0.5rem;
 	}
 </style>
