@@ -11,7 +11,7 @@
 		"@sveltejs/kit": "2.17.2",
 		"@sveltejs/vite-plugin-svelte": "5.0.3",
 		"@typescript-eslint/eslint-plugin": "8.24.0",
-		"@typescript-eslint/parser": "8.23.0",
+		"@typescript-eslint/parser": "8.24.0",
 		"eslint": "9.20.1",
 		"eslint-plugin-perfectionist": "4.9.0",
 		"prettier": "3.5.0",
