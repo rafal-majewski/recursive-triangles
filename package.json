@@ -19,7 +19,7 @@
 		"release-it": "19.0.3",
 		"sass-embedded": "1.89.2",
 		"svelte": "5.34.6",
-		"svelte-check": "4.2.1",
+		"svelte-check": "4.2.2",
 		"svelte-eslint-parser": "1.1.3",
 		"typescript": "5.8.3"
 	},
