@@ -10,7 +10,7 @@
 		"@sveltejs/adapter-static": "3.0.8",
 		"@sveltejs/kit": "2.42.2",
 		"@sveltejs/vite-plugin-svelte": "6.2.0",
-		"@typescript-eslint/eslint-plugin": "8.44.0",
+		"@typescript-eslint/eslint-plugin": "8.44.1",
 		"@typescript-eslint/parser": "8.44.0",
 		"eslint": "9.36.0",
 		"eslint-plugin-perfectionist": "4.15.0",
