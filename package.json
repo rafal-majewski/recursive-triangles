@@ -20,7 +20,7 @@
 		"sass-embedded": "1.93.3",
 		"svelte": "5.45.5",
 		"svelte-check": "4.3.4",
-		"svelte-eslint-parser": "1.4.0",
+		"svelte-eslint-parser": "1.4.1",
 		"typescript": "5.9.3"
 	},
 	"description": "An example demonstrating a world generator.",
