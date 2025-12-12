@@ -16,7 +16,7 @@
 		"eslint-plugin-perfectionist": "4.15.1",
 		"prettier": "3.7.4",
 		"prettier-plugin-svelte": "3.4.0",
-		"release-it": "19.0.6",
+		"release-it": "19.1.0",
 		"sass-embedded": "1.95.1",
 		"svelte": "5.45.9",
 		"svelte-check": "4.3.4",
