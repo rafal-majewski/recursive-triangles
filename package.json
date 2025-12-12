@@ -17,7 +17,7 @@
 		"prettier": "3.7.4",
 		"prettier-plugin-svelte": "3.4.0",
 		"release-it": "19.1.0",
-		"sass-embedded": "1.95.1",
+		"sass-embedded": "1.96.0",
 		"svelte": "5.45.9",
 		"svelte-check": "4.3.4",
 		"svelte-eslint-parser": "1.4.1",
