@@ -5,7 +5,7 @@
 	},
 	"devDependencies": {
 		"@commitlint/cli": "20.3.1",
-		"@release-it/conventional-changelog": "10.0.3",
+		"@release-it/conventional-changelog": "10.0.4",
 		"@stylistic/eslint-plugin": "5.7.0",
 		"@sveltejs/adapter-static": "3.0.10",
 		"@sveltejs/kit": "2.49.4",
