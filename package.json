@@ -4,7 +4,7 @@
 		"url": "https://github.com/Rafal-Majewski/recursive-triangles/issues"
 	},
 	"devDependencies": {
-		"@commitlint/cli": "20.3.1",
+		"@commitlint/cli": "20.4.0",
 		"@release-it/conventional-changelog": "10.0.3",
 		"@stylistic/eslint-plugin": "5.7.1",
 		"@sveltejs/adapter-static": "3.0.10",
